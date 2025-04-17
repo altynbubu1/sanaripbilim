@@ -1,0 +1,11 @@
+
+{% extends 'courses/base.html' %}
+{% load static %}
+{% block content %}
+
+<h2>{{ course.title }}</h2>
+<img src="{{ course.image.url }}" alt="{{ course.title }}">
+<p>{{ course.description }}</p>
+<h2>Баасы: {{ course.price }} сом</h2>
+<a href="{% url 'enroll_course' course.id %}">Записаться</a>
+{% endblock %}

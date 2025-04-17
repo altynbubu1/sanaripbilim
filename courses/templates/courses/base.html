@@ -1,0 +1,42 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>SanaripBilim</title>
+    <link rel="stylesheet" type="text/css" href="{% static 'css/style.css' %}">
+<body>
+    <nav>
+        <a href="/">SanaripBilim</a>|
+        <a href="/">Курсы</a> |
+        <a href="/register/">Регистрация</a> |
+        <a href="/login/">Вход</a>
+    </nav>
+    <hr>
+    <div class="container">
+        {% block content %}{% endblock %}
+    </div>
+    <!-- <img src="{% static 'img/1.jpg' %}" class="d-block w-100" alt="Slide 1">
+    <img src="{% static 'img/2.jpg' %}" class="d-block w-100" alt="Slide 2"> -->
+    
+    <footer class="footer">
+        <div class="footer-container">
+            <div class="footer-logo">
+                <a href="/">SanaripBilim</a>
+            </div>
+            <div class="footer-links">
+                <p><a href="/about/">О нас</a> | <a href="/contact/">Контакты</a> | <a href="/privacy/">Политика конфиденциальности</a></p>
+            </div>
+            <div class="footer-socials">
+                <a href="https://facebook.com" target="_blank" class="social-icon">Facebook</a>
+                <a href="https://instagram.com" target="_blank" class="social-icon">Instagram</a>
+                <a href="https://linkedin.com" target="_blank" class="social-icon">LinkedIn</a>
+            </div>
+            <div class="footer-copy">
+                <p>&copy; 2025 SanaripBilim. Все права защищены.</p>
+            </div>
+        </div>
+    </footer>
+    
+</body>
+</html>

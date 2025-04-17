@@ -1,0 +1,208 @@
+/* Reset some default styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Global styles */
+body {
+    font-family: 'Roboto', sans-serif;
+    background-color: #f4f7fc;
+    color: #555;
+    line-height: 1.6;
+}
+
+/* Main container */
+.container {
+    width: 90%;
+    max-width: 1100px;
+    margin: 40px auto;
+    background-color: white;
+    border-radius: 12px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    padding: 30px;
+}
+
+/* Header styles */
+h1, h2 {
+    text-align: center;
+    color: #2a3d66;
+    margin-bottom: 20px;
+    font-weight: bold;
+}
+
+/* Navigation styles */
+nav {
+    background-color: #1e2a38;
+    padding: 12px 0;
+    text-align: center;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+nav a {
+    color: #fff;
+    margin: 0 20px;
+    text-decoration: none;
+    font-weight: 600;
+    text-transform: uppercase;
+    font-size: 16px;
+}
+
+nav a:hover {
+    color: #f8c510;
+    border-bottom: 2px solid #f8c510;
+}
+
+/* Form & Button styles */
+form {
+    margin-top: 30px;
+    display: flex;
+    flex-direction: column;
+}
+
+form input, form select, form button {
+    padding: 12px 20px;
+    margin-bottom: 15px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    font-size: 16px;
+}
+
+form input:focus, form select:focus, form button:focus {
+    border-color: #005b96;
+    outline: none;
+}
+
+button {
+    background-color: #005b96;
+    color: white;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+button:hover {
+    background-color: #003f6f;
+}
+
+/* Course List Styles */
+ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+
+li {
+    padding: 12px 0;
+    border-bottom: 1px solid #ddd;
+    font-size: 18px;
+}
+
+li a {
+    color: #2a3d66;
+    text-decoration: none;
+    font-weight: 600;
+    transition: color 0.3s ease;
+}
+
+li a:hover {
+    color: #f8c510;
+}
+
+/* Responsive Design */
+@media screen and (max-width: 768px) {
+    nav {
+        padding: 10px;
+    }
+
+    nav a {
+        margin: 0 10px;
+    }
+
+    .container {
+        width: 95%;
+        padding: 20px;
+    }
+
+    form input, form select, form button {
+        font-size: 14px;
+        padding: 10px 15px;
+    }
+
+    li {
+        font-size: 16px;
+    }
+}
+
+
+/* Общие стили для footer */
+.footer {
+    background-color: #333; /* Темный фон */
+    color: #ffffff; /* Белый текст */
+    padding: 30px 0; /* Отступы для подвала */
+    font-family: 'Arial', sans-serif; /* Простой и читабельный шрифт */
+}
+
+.footer-container {
+    width: 80%;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.footer-logo a {
+    font-size: 30px;
+    color: #fff;
+    text-decoration: none;
+    font-weight: bold;
+    letter-spacing: 1px;
+    display: block;
+    margin-bottom: 20px;
+}
+
+.footer-logo a:hover {
+    color: #00bcd4; /* Цвет при наведении */
+}
+
+.footer-links p {
+    margin: 10px 0;
+}
+
+.footer-links a {
+    color: #bbb;
+    text-decoration: none;
+    padding: 0 10px;
+}
+
+.footer-links a:hover {
+    color: #fff;
+    text-decoration: underline;
+}
+
+.footer-socials {
+    margin: 20px 0;
+}
+
+.social-icon {
+    background-color: #444;
+    color: #fff;
+    padding: 10px 20px;
+    margin: 0 10px;
+    border-radius: 5px;
+    text-decoration: none;
+    font-size: 16px;
+    transition: background-color 0.3s ease;
+}
+
+.social-icon:hover {
+    background-color: #00bcd4;
+}
+
+.footer-copy {
+    margin-top: 20px;
+    font-size: 14px;
+    color: #aaa;
+}
+
+.footer-copy p {
+    margin: 5px 0;
+}
