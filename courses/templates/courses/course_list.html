@@ -1,21 +1,35 @@
-
 {% extends 'courses/base.html' %}
 {% load static %}
 {% block content %}
-<h2>Все курсы</h2>
-<ul>
+
+<h2 class="mb-4">Все курсы</h2>
+
+<div class="container">
   {% for course in courses %}
-    <li>
-      <a href="{% url 'course_detail' course.id %}">{{ course.title }}</a> 
-      ({{ course.category.name }} - 
-      {% if course.is_online %}
-        Онлайн
-      {% else %}
-        Оффлайн
-      {% endif %}
-      )
-    </li>
+  <div class="card mb-4 shadow-sm">
+    <div class="row g-0">
+      <div class="col-md-4">
+        <img src="{{ course.image.url }}" class="img-fluid rounded-start" alt="{{ course.title }}">
+      </div>
+      <div class="col-md-8">
+        <div class="card-body">
+          <h5 class="card-title">{{ course.title }}</h5>
+          <p class="card-text">{{ course.description }}</p>
+          <p class="card-text"><strong>Категория:</strong> {{ course.category.name }}</p>
+          <p class="card-text"><strong>Формат:</strong> 
+            {% if course.is_online %}
+              Онлайн
+            {% else %}
+              Оффлайн
+            {% endif %}
+          </p>
+          <p class="card-text"><strong>Баасы:</strong> {{ course.price }} сом</p>
+          <a href="{% url 'enroll_course' course.id %}" class="btn btn-primary">Записаться</a>
+        </div>
+      </div>
+    </div>
+  </div>
   {% endfor %}
-</ul>
+</div>
+
 {% endblock %}
-<script src="{% static 'js/scripts.js' %}"></script>

@@ -25,3 +25,13 @@ class Enrollment(models.Model):
 
     def __str__(self):
         return f"{self.user.username} -> {self.course.title}"
+    
+
+class Mentor(models.Model):
+    name = models.CharField(max_length=100)
+    bio = models.TextField()
+    photo = models.ImageField(upload_to='mentors/')
+
+    def __str__(self):
+        return self.name
+

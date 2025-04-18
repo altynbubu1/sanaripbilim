@@ -1,5 +1,5 @@
 from django.shortcuts import render, redirect, get_object_or_404
-from .models import Course, Category, Enrollment
+from .models import Course, Category, Enrollment, Mentor
 from .forms import RegisterForm
 from django.contrib.auth import login, authenticate, logout
 from django.contrib.auth.forms import AuthenticationForm
@@ -11,6 +11,10 @@ def index(request):
 def course_list(request):
     courses = Course.objects.all()
     return render(request, 'courses/course_list.html', {'courses': courses})
+
+def mentors(request):
+    mentors = Mentor.objects.all()
+    return render(request, 'courses/mentors.html', {'mentors': mentors})
 
 def course_detail(request, course_id):
     course = get_object_or_404(Course, id=course_id)

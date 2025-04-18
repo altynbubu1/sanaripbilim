@@ -1,0 +1,27 @@
+{% extends 'courses/base.html' %}
+{% load static %}
+{% block content %}
+
+<h2 class="mb-4">Наши менторы</h2>
+<div class="container">
+    {% for mentor in mentors %}
+    <div class="row mb-4">
+        <div class="col-md-12">
+            <div class="d-flex flex-wrap align-items-center p-3 shadow-sm rounded bg-light">
+                <!-- Фото -->
+                <img src="{{ mentor.photo.url }}" alt="{{ mentor.name }}"
+                     class="rounded-circle me-4 mb-3 mb-md-0" 
+                     style="width: 150px; height: 150px; object-fit: cover;">
+                
+                <!-- Текст -->
+                <div>
+                    <h3 class="mb-2">{{ mentor.name }}</h3>
+                    <p class="mb-0">{{ mentor.bio }}</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    {% endfor %}
+</div>
+
+{% endblock %}

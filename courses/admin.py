@@ -1,5 +1,5 @@
 from django.contrib import admin
-from .models import Category, Course, Enrollment
+from .models import Category, Course, Enrollment, Mentor    
 
 @admin.register(Category)
 class CategoryAdmin(admin.ModelAdmin):
@@ -17,3 +17,6 @@ class EnrollmentAdmin(admin.ModelAdmin):
     list_display = ('id', 'user', 'course', 'enrolled_at')
     list_filter = ('course', 'enrolled_at')
     search_fields = ('user__username', 'course__title')
+
+admin.site.register(Mentor)
+
