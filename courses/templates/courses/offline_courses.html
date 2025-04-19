@@ -1,0 +1,39 @@
+{% extends 'courses/base.html' %}
+{% load static %}
+
+{% block content %}
+
+<h2 class="mb-4">Оффлайн курсы</h2>
+
+<style>
+  .card img {
+    max-width: 250px; /* Уменьшает ширину изображения */
+    height: auto;     /* Сохраняет пропорции */
+    object-fit: cover; /* Если нужно обрезать изображение красиво */
+    border-radius: 10px;
+  }
+</style>
+
+<div class="container">
+  {% for course in courses %}
+  <div class="card mb-4 shadow-sm">
+    <div class="row g-0">
+      <div class="col-md-4 d-flex align-items-center justify-content-center">
+        <img src="{{ course.image.url }}" class="img-fluid rounded-start" alt="{{ course.title }}">
+      </div>
+      <div class="col-md-8">
+        <div class="card-body">
+          <h5 class="card-title" style="font-size: 35px;">{{ course.title }}</h5>
+          <p class="card-text">{{ course.description }}</p>
+          <p class="card-text"><strong>Категория:</strong> {{ course.category.name }}</p>
+          <p class="card-text"><strong>Баасы:</strong> {{ course.price }} сом</p>
+          <a href="{% url 'enroll_course' course.id %}" class="btn btn-primary">Записаться</a>
+        </div>
+      </div>
+    </div>
+  </div>
+  {% endfor %}
+</div>
+
+{% endblock %}
+

@@ -7,15 +7,18 @@
     <link rel="stylesheet" type="text/css" href="{% static 'css/style.css' %}">
 <body>
     <nav>
-        <a href="/">SanaripBilim</a>|
-        <a href="/">Курсы</a>
-        <a href="/mentors/">Менторы</a> |
-        <a href="/register/">Регистрация</a> |
-        <a href="/login/">Вход</a>
+        <a href="/">SanaripBilim</a>     | 
+        <a href="/">Оффлайн курсы</a>      |
+        <a href="/online/">Онлайн курсы</a>     |
+        <a href="/mentors/">Менторы</a>    |
+        <a href="/register/">Регистрация</a>    |
+        <a href="/login/">Вход</a>   |
     </nav>
     <hr>
     <div class="container">
-        {% block content %}{% endblock %}
+        {% block content %}
+        
+        {% endblock %}
     </div>
     <!-- <img src="{% static 'img/1.jpg' %}" class="d-block w-100" alt="Slide 1">
     <img src="{% static 'img/2.jpg' %}" class="d-block w-100" alt="Slide 2"> -->

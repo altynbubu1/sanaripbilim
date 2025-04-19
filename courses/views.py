@@ -8,9 +8,19 @@ from django.contrib.auth.decorators import login_required
 def index(request):
     return render(request, 'courses/index.html')
 
-def course_list(request):
-    courses = Course.objects.all()
-    return render(request, 'courses/course_list.html', {'courses': courses})
+# def course_list(request):
+#     courses = Course.objects.all()
+#     return render(request, 'courses/course_list.html', {'courses': courses})
+
+
+def online_courses(request):
+    courses = Course.objects.filter(is_online=True)
+    return render(request, 'courses/online_courses.html', {'courses': courses})
+
+def offline_courses(request):
+    courses = Course.objects.filter(is_online=False)
+    return render(request, 'courses/offline_courses.html', {'courses': courses})
+
 
 def mentors(request):
     mentors = Mentor.objects.all()
